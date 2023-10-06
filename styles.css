@@ -1,7 +1,7 @@
 :root {
     --text-color: hsl(36, 100%, 99%);
     --frequent-color: hsl(240, 100%, 5%);
-    --another-color: hsl(233, 8%, 79%);
+    --another-color: hsl(236, 13%, 42%);
 }
 
 * {
@@ -21,9 +21,10 @@
 body {
     font-family: fontSwitch;
     font-weight: 400;
-    color: var(--frequent-color);
+    color: var(--another-color);
     font-size: 15px;
     margin: 0;
+    background-color:rgb(255, 247, 237);
 }
 
 /* ACTIVE BODY */
@@ -194,6 +195,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: 180px;
+    font-size: 18px;
 }
 
 .top-first .btn {
@@ -226,7 +228,7 @@ main {
 }
 
 .top-second p {
-    color: var(--another-color);
+    color: hsl(233, 8%, 79%);
 }
 
 .top-second h4, .top-second p {
