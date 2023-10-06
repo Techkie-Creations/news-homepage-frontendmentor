@@ -26,6 +26,8 @@ Users should be able to:
 
 ![Preview Image](./design/preview.jpg)
 
+Could not get a full screenshot of the preview image.
+
 ### Links
 
 - Solution URL: [You are already here](https://github.com/Techkie-Creations/news-homepage-frontendmentor)
