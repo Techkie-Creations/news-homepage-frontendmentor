@@ -1,0 +1,385 @@
+:root {
+    --text-color: hsl(36, 100%, 99%);
+    --frequent-color: hsl(240, 100%, 5%);
+    --another-color: hsl(233, 8%, 79%);
+}
+
+* {
+    box-sizing: border-box;
+    box-shadow: none;
+}
+
+/* Declaring Font Family */
+
+@font-face {
+    font-family: fontSwitch;
+    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+/* GENERAL */
+
+body {
+    font-family: fontSwitch;
+    font-weight: 400;
+    color: var(--frequent-color);
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ACTIVE BODY */
+
+body.active {
+    overflow: hidden; /* Hide scrollbars */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+/* VEIL IN BOTH STATES */
+
+.veil {
+    width: 90%;
+    height: 100vh;
+    background-color: black;
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+.veil.active {
+    opacity: .5;
+    display: block;
+}
+
+/* HEADER & NAVIGATION */
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    z-index: -1;
+}
+
+.logo {
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-menu li a {
+    color: var(--frequent-color);
+    font-weight: 600;
+    padding: 10px;
+}
+
+.navbar .nav-menu li a:hover {
+    background-color: var(--frequent-color);
+    color: white;
+}
+
+.menu {
+    display: none;
+    height: max-content;
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+    height: max-content;
+    cursor: pointer;
+}
+
+/* NAVBAR WHEN ACTIVE */
+
+.navbar.active {
+    right: 0;
+}
+
+
+.navbar.active .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 90px;
+    font-size: 20px;
+}
+
+.navbar.active .nav-menu li {
+    margin: 10px 0;
+}
+
+.menu-close.active {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    padding: 20px;
+}
+
+/* MAIN CONTENT */
+/* SPLITTING THE CONTENT TO LEFT & RIGHT */
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: row;
+    z-index: -1;
+}
+
+.half1 {
+    width: 65%;
+}
+
+.half1 .hero-img {
+    width: 100%;
+}
+
+.half2 {
+    width: 35%;
+    margin: 0;
+}
+
+.half1, .half2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* TOP PART */
+/* FIRST TOP OF FIRST HALF*/
+
+.top-first img {
+    width: 100%;
+    height: 280px;
+}
+
+.top-first .heading {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    gap: 10px;
+}
+
+.top-first .heading h1 {
+    margin-top: 10px;
+    font-size: 50px;
+    height: 180px;
+    font-weight: 800;
+    color: var(--frequent-color);
+}
+
+.top-first .heading .sub-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+}
+
+.top-first .btn {
+    width: 170px;
+    height: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-color);
+    background-color: hsl(5, 85%, 63%);
+    border: none;
+}
+
+/* SECOND TOP OF SECOND HALF */
+
+.top-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 450px;
+    padding: 10px 20px;
+    background-color: var(--frequent-color);
+    color: var(--text-color);
+}
+
+
+.top-second h2 {
+    color: hsl(35, 77%, 62%);
+    margin: 0px 0;
+    font-size: 35px;
+}
+
+.top-second p {
+    color: var(--another-color);
+}
+
+.top-second h4, .top-second p {
+    margin: 10px 0;
+}
+
+hr.line {
+    border: 0.5px solid hsl(236, 13%, 42%);
+}
+
+/* BOTTOM PART */
+
+.bottom1, .bottom2 {
+    display: grid;
+    gap: 7px;
+    height: 250px;
+    align-items: center;
+}
+
+.bottom1 h4, .bottom2 h4 {
+    color: var(--frequent-color);
+    font-weight: 700;
+}
+
+.bottom1 h2, .bottom2 h2 {
+    color: var(--another-color);
+}
+
+.bottom1 {
+    grid-template-columns: repeat(4, auto);
+}
+
+.bottom2 {
+    grid-template-columns: repeat(4, auto);
+}
+
+.extra-img {
+    width: 130px;
+}
+
+/* FOOTER */
+
+.attribution {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.attribution a {
+    color: hsl(5, 85%, 63%);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 906px) {
+    .menu {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        right: -100%;
+        transition: 0.3s;
+        width: 350px;
+        z-index: 999;
+        background-color: white;
+        top: 0;
+        height: 100%;
+    }
+
+    .navbar .nav-menu::after {
+        content: 'Techkie Creations © 2023';
+        color: var(--frequent-color);
+        margin-top: 190px;
+        font-size: small;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .half1, .half2 {
+        width: 100%;
+    }
+
+    .top-second {
+        position: absolute;
+        top: 580px;
+        width: 90%;
+    }
+
+    .bottom1 {
+        grid-template-columns: repeat(2, auto);
+        width: 100%;
+    }
+
+    .bottom2 {
+        margin-top: 33px;
+        grid-template-columns: repeat(2, auto);
+        width: 100%;
+    }
+    
+    .bottom1, .bottom2 {
+        position: relative;
+        top: 500px;
+    }
+
+    .attribution {
+        margin-top: 500px;
+    }
+}
+
+
+@media (max-width: 624px) {
+    .navbar {
+        right: -300%;
+    }
+
+    .hero-img {
+        object-fit: cover;
+    }
+
+    .top-first .heading {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-first .heading h1 {
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
+
+    .top-second {
+        position: absolute;
+        top: 700px;
+        width: 90%;
+    }
+
+    .bottom1, .bottom2 {
+        position: relative;
+        top: 550px;
+    }
+
+    .attribution {
+        margin-top: 580px;
+    }
+}
+
+@media (max-width: 477px) {
+    .top-second {
+        position: absolute;
+        top: 770px;
+        width: 90%;
+    }
+}
